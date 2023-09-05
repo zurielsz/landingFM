@@ -1,0 +1,158 @@
+:root {
+--violet: hsl(257, 40%, 49%);
+--soft-Magenta: hsl(300, 69%, 71%);
+}
+* {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html
+{
+  font-size:62.5%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+body {
+  font-size: 1.2rem;
+  width: 1440px;
+  height: 100vh;
+  background-image: url('../img/bg-desktop.svg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--violet);
+}
+main {
+  padding: 5rem 10rem;
+  width: 100%;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 
+  "logo logo logo"
+  "cuerpo cuerpo cuerpo"
+  "pie pie pie"
+  ;
+}
+main .headerContainer,
+main .bodyContainer,
+main .footerContainer 
+{
+  width: 100%;
+}
+main .headerContainer 
+{
+  grid-area: logo;
+}
+main .headerContainer img 
+{
+  width: 20rem;
+}
+main .bodyContainer
+{
+  grid-area: cuerpo;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .bodyContainer .bodyContainer-Image
+{
+  width: 60%;
+}
+main .bodyContainer .bodyContainer-Image img {
+  width: 100%;
+}
+main .bodyContainer .bodyContainer-Description
+{
+  width: 40%;
+  margin: 0rem 5rem;
+}
+main .bodyContainer .bodyContainer-Description div 
+{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 2rem 0rem;
+}
+main .bodyContainer .bodyContainer-Description div p
+{
+  width: 100%;
+  color: white;
+}
+main .bodyContainer .bodyContainer-Description div .bodyContainer-Description__title
+{
+  font-size: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+main .bodyContainer .bodyContainer-Description div .bodyContainer-Description__description
+{
+  /* font-size: 1.2rem; */
+  font-weight: 300;
+  line-height: 1.6rem;
+  letter-spacing: .1rem;
+}
+main .bodyContainer .bodyContainer-Description div .bodyContainer-Description__button
+{
+  align-self: self-start;
+  width: 200px;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: white;
+  color: var(--violet);
+  border: none;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transition: .4s ease-in-out;
+  transition-property: background-color, color;
+}
+main .bodyContainer .bodyContainer-Description div .bodyContainer-Description__button:hover
+{
+  background-color: var(--soft-Magenta);
+  color: white;
+}
+
+
+main .footerContainer
+{
+  grid-area: pie;
+}
+main .footerContainer div 
+{
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 5rem;
+  gap: 0 2rem;
+}
+main .footerContainer div button
+{
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color, .3s ease-in-out;
+}
+
+main .footerContainer div button svg 
+{
+  height: 100%;
+  fill: white;
+  width: 100%;
+  transition: fill 0.3s ease-in-out;
+}
+main .footerContainer div button svg:hover 
+{
+  fill: var(--soft-Magenta);
+}
